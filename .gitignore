@@ -3,3 +3,4 @@ __pycache__/
 .env
 audit_log.jsonl
 .pytest_cache/
+.venv/

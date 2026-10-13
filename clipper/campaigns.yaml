@@ -1,0 +1,25 @@
+# Active Whop Content Rewards campaigns. A campaign is only clipped when `active: true`.
+# Join the campaign on Whop first: posts only earn once you've joined and submit the link.
+#
+# sources: video URLs, a channel's /videos URL, or a local file/folder (relative paths are
+#          resolved inside <CLIPPER_DATA_DIR>/inbox/).
+# platforms: where to post, limited to the campaign's paying platforms you have connected.
+
+campaigns:
+  - id: traxnyc-roman-sharf
+    name: "CLIP TRAXNYC & ROMAN SHARFF"
+    active: true
+    whop_url: https://contentrewards.com/c/campaigns/a5fc2454-9a65-4896-bf7f-9ea06ecdc5bd
+    cpm: 1.00                     # $ per 1,000 views; min payout $10, max $300 per post
+    platforms: [youtube, instagram]   # campaign also pays on TikTok (not connected yet)
+    sources:
+      # Dual Time Podcast #21, "TraxNYC Tells Roman Sharf: Where's My Money?" (1:02:08).
+      # Confirm against the reference file Whop unlocks when you join.
+      - https://www.youtube.com/watch?v=liGIR1SePYE
+    framing: blur
+    clip_seconds: [20, 60]
+    required_text: 'USE CODE "WHOP" FOR 5% OFF ON TRAXNYC.COM'
+    brief: |
+      Clip this podcast between TraxNYC and Roman Sharf (luxury watches and jewelry).
+      Every post must carry: USE CODE "WHOP" FOR 5% OFF ON TRAXNYC.COM (added automatically).
+      Best moments: negotiations, money disputes, celebrity watch stories, price reveals.
