@@ -4,6 +4,7 @@ import {
   Composition,
   Easing,
   Html5Audio,
+  Img,
   OffthreadVideo,
   Sequence,
   continueRender,
@@ -291,25 +292,10 @@ const Scene3: React.FC = () => {
   );
 };
 
+const LOGO_BG = "#FEFEFE";
 const Logo: React.FC<{ size?: number }> = ({ size = 190 }) => (
-  <div
-    style={{
-      width: size,
-      height: size,
-      borderRadius: size * 0.27,
-      background: BLUE,
-      border: `${size * 0.045}px solid ${CREAM}`,
-      boxShadow: "0 12px 0 rgba(15,23,42,0.4)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      position: "relative",
-    }}
-  >
-    <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: size * 0.43, color: CREAM, lineHeight: 1, marginTop: size * 0.06, letterSpacing: 1 }}>FBC</div>
-    <div style={{ position: "absolute", top: -size * 0.14, right: -size * 0.14 }}>
-      <Star size={size * 0.36} color={GOLD} />
-    </div>
+  <div style={{ height: size, borderRadius: size * 0.2, background: LOGO_BG, padding: `${size * 0.1}px ${size * 0.16}px`, boxShadow: "0 12px 0 rgba(15,23,42,0.4)", display: "flex", alignItems: "center", boxSizing: "border-box" }}>
+    <Img src={staticFile("logo_full.png")} style={{ height: "100%" }} />
   </div>
 );
 
@@ -333,7 +319,7 @@ const Scene4: React.FC = () => {
         <Row y={1120}>
           <div style={{ position: "relative", transform: `scale(${sp}) rotate(${(1 - sp) * -40}deg)`, marginBottom: 12 }}>
             <div style={{ position: "absolute", inset: -90, borderRadius: "50%", background: `radial-gradient(circle, rgba(250,204,21,${0.85 * glow}) 0%, rgba(250,204,21,0) 65%)` }} />
-            <Logo size={170} />
+            <Logo size={200} />
           </div>
           <Pop from={at + 4}>
             <Txt size={104}>
@@ -585,7 +571,7 @@ const EndCard: React.FC = () => {
         })}
         <div style={{ position: "absolute", top: 150, left: 0, right: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
           <Rise at={b}>
-            <Logo size={150} />
+            <Logo size={190} />
           </Rise>
           <Rise at={b + 6} style={{ marginTop: 44 }}>
             <Txt size={128} sw={0} shadow={"rgba(37,99,235,0.9)"}>
@@ -697,9 +683,9 @@ const Advert: React.FC = () => (
 
 const Watermark: React.FC = () => (
   <AbsoluteFill>
-    <div style={{ position: "absolute", top: 46, left: 36, display: "flex", alignItems: "center", gap: 16, background: "rgba(15,23,42,0.5)", borderRadius: 44, padding: "10px 26px 10px 12px" }}>
-      <div style={{ width: 60, height: 60, borderRadius: 17, background: BLUE, border: `3px solid ${CREAM}`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: 26, color: CREAM, lineHeight: 1, marginTop: 4 }}>FBC</div>
+    <div style={{ position: "absolute", top: 44, left: 36, display: "flex", alignItems: "center", gap: 16, background: "rgba(15,23,42,0.5)", borderRadius: 48, padding: "9px 28px 9px 10px" }}>
+      <div style={{ width: 70, height: 70, borderRadius: 35, background: LOGO_BG, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <Img src={staticFile("logo_mark.png")} style={{ width: 54 }} />
       </div>
       <div style={{ fontFamily: BODY, fontWeight: 900, fontSize: 36, color: CREAM, letterSpacing: 1, whiteSpace: "nowrap" }}>0816 872 2876</div>
     </div>
