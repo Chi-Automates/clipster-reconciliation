@@ -695,4 +695,20 @@ const Advert: React.FC = () => (
   </AbsoluteFill>
 );
 
-export const MyComposition = () => <Composition id="FBCHolidayLab" component={Advert} durationInFrames={T.total} fps={FPS} width={1080} height={1920} />;
+const Watermark: React.FC = () => (
+  <AbsoluteFill>
+    <div style={{ position: "absolute", top: 46, left: 36, display: "flex", alignItems: "center", gap: 16, background: "rgba(15,23,42,0.5)", borderRadius: 44, padding: "10px 26px 10px 12px" }}>
+      <div style={{ width: 60, height: 60, borderRadius: 17, background: BLUE, border: `3px solid ${CREAM}`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ fontFamily: HEAD, fontWeight: 800, fontSize: 26, color: CREAM, lineHeight: 1, marginTop: 4 }}>FBC</div>
+      </div>
+      <div style={{ fontFamily: BODY, fontWeight: 900, fontSize: 36, color: CREAM, letterSpacing: 1, whiteSpace: "nowrap" }}>0816 872 2876</div>
+    </div>
+  </AbsoluteFill>
+);
+
+export const MyComposition = () => (
+  <>
+    <Composition id="FBCHolidayLab" component={Advert} durationInFrames={T.total} fps={FPS} width={1080} height={1920} />
+    <Composition id="Watermark" component={Watermark} durationInFrames={1} fps={FPS} width={1080} height={1920} />
+  </>
+);
